@@ -37,7 +37,7 @@ class PetsController < ApplicationController
     if !params["owner_name"].empty?
       @pet.owner = Owner.create(name: params["owner_name"])
     else
-      @owner =  Owner.find(params[:owner_id].to_i)
+      @pet.owner = Owner.find(params[:owner_id].to_i)    
     end
     if !params["pet_name"].empty?
       @pet.name = params["pet_name"]
