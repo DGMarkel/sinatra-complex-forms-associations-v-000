@@ -14,7 +14,7 @@
   <br></br>
 
   <%Owner.all.each do |owner|%>
-    <input type="checkbox" name="owner_name" value="<%= owner.id %>" id="<%= owner.id %>"
+    <input type="checkbox" name="owner[name][]" value="<%= owner.id %>" id="<%= owner.id %>"
     <%='checked' if owner.name == @pet.owner.name %>><%=owner.name%></input>
   <%end%>
 
