@@ -34,6 +34,7 @@ class PetsController < ApplicationController
 
   post '/pets/:id' do
     @pet = Pet.find(params[:id])
+    binding.pry
     if !params["owner_name"].empty?
       @pet.owner = Owner.create(name: params["owner_name"])
     else
@@ -43,7 +44,7 @@ class PetsController < ApplicationController
       @pet.name = params["pet_name"]
     end
     @pet.save
-    binding.pry
+
     redirect to "pets/#{@pet.id}"
   end
 
